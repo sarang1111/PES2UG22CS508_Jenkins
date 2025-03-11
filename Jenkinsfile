@@ -4,21 +4,21 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ -o PES2UG22CS508-1 main.cpp'
+                sh 'g++ -o PES2UG22CS508 main.cpp'
                 echo 'Build Stage Successful'
             }
         }
         
         stage('Test') {
             steps {
-                sh './PES2UG22CS508-1'
+                sh 'PES2UG22CS508'
                 echo 'Test Stage Successful'
             }
         }
         
         stage('Deploy') {
             steps {
-                sh 'cp PES2UG22CS508-1 /tmp/'
+                sh 'cp PES2UG22CS508 /tmp/'
                 echo 'Deployment Successful'
             }
         }
